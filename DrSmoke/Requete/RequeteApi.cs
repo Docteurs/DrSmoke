@@ -13,6 +13,7 @@ namespace DrSmoke.Requete
    
     class RequeteApi
     {
+        public int count = 0;
         public List<Models.Magasin> Magasin { get; private set; }
         private readonly HttpClient _client;
         private readonly JsonSerializerOptions _serializerOptions;
