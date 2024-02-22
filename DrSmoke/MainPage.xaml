@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DrSmoke.MainPage" 
+             Shell.TabBarIsVisible="False">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="10,10,10,10" />
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style TargetType="Image">
+            <Setter Property="Margin" Value="10,10,10,10" />
+            <Setter Property="HorizontalOptions" Value="Start"/>
+        </Style>
+        <Style TargetType="ImageButton">
+            <Setter Property="HorizontalOptions" Value="End" />
+            <Setter Property="WidthRequest" Value="25" />
+            <Setter Property="HeightRequest" Value="25" />
+            <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="BackgroundColor" Value="#f9f6f6" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="50" />
+            <Setter Property="BorderColor" Value="White" />
+        </Style>
+        <Style TargetType="Frame">
+            <Setter Property="WidthRequest" Value="300" />
+            <Setter Property="Margin" Value="10,10,10,10" />
+            <Setter Property="BorderColor" Value="#eae7e7" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <BoxView BackgroundColor="#f9f6f6" />
+            <!-- Image à gauche -->
+            <Image Source="logodrsmoke_new.png.webp"/>
+                    
+            <!-- SearchBar au centre -->
+        
+            <ImageButton  Source="user.png" Clicked="Testing" />
+
+
+            <VerticalStackLayout Grid.Row="1">
+
+
+                <Button Text="Se connecter" Clicked="ButtonConnexion"/>
+                <Label Text="ou" TextColor="#868383" HorizontalOptions="Center" VerticalOptions="Center" FontSize="22"/>
+                <Button Text="S'enregister" TextColor="#868383" Clicked="ButtonEnregistrer" />
+            </VerticalStackLayout>
+
+            <Frame Grid.Row="2" IsVisible="true" x:Name="ConnexionForm">
+                
+                <VerticalStackLayout>
+                    <Label Text="Se Connecter" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Text="Identifiant ou e-mail *" />
+                    <Entry x:Name="EntryEmailConnection" Placeholder="example@gmail.com" />
+
+                    <Label Text="Mot de passe *"/>
+                    <Entry x:Name="EntryPasswordConnection" Placeholder="Your password"/>
+
+                    <Button Text="Se connecter" Clicked="OnConnexion" BackgroundColor="#1d6e35" TextColor="White" FontSize="30" />
+   
+                </VerticalStackLayout>
+            </Frame>
+
+           
+
+            <Frame Grid.Row="2" IsVisible="False" x:Name="EnregsitrementForm">
+                <VerticalStackLayout>
+                    <Label Text="S'enregistrer" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center" Margin="10,10,10,10"/>
+                    <Label Text="E-mail *" />
+                    <Entry x:Name="EntryEmail" Placeholder="example@gmail.com"/>
+
+                    <Label Text="Mot de passe *" />
+                    <Entry x:Name="EntryPassword" Placeholder="Your password" />
+
+                    <Label Text="Confirmez votre mot de passe *" />
+                    <Entry x:Name="EntryConfirmPassword" Placeholder="Your password" />
+
+                    <Label Text="Nom" />
+                    <Entry x:Name="EntryName" Placeholder="Entrez votre nom *" />
+
+                    <Label Text="Prénom" />
+                    <Entry x:Name="EntryPrenom" Placeholder="Entrez votre Prénom *" />
+
+                    <Label Text="Addresse" />
+                    <Entry x:Name="EntryAddresse" Placeholder="Entre votre Addresse *" />
+
+                    <Label Text="Vos données personnelles seront utilisées pour traiter votre commande, soutenir votre expérience sur ce site Web et à d’autres fins décrites dans notre politique de confidentialité."
+                           TextColor="#957996"
+                           FontSize="12"
+                           Margin="10,10,10,10"/>
+
+                    <Button Text="S'enregistrer" BackgroundColor="#1d6e35" TextColor="White" FontSize="30" Clicked="OnEnregistrement" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

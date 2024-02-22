@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DrSmoke.Pages.ProduitMagasin"
+             Title="ProduitMagasin">
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#1a6f36" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+        <Style TargetType="Image">
+            <Setter Property="WidthRequest" Value="300"/>
+            <Setter Property="HeightRequest" Value="300" />
+        </Style>
+        <Style TargetType="BoxView" x:Key="Separateur">
+            <Setter Property="Color" Value="#1a6f36"/>
+            <Setter Property="HeightRequest" Value="2" />
+            <Setter Property="HorizontalOptions" Value="Fill"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="NunitoRegular" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+        <Style TargetType="Frame">
+            <Setter Property="Margin" Value="10,10,10,10"/>
+        </Style>
+        <Style x:Key="Title" TargetType="Label">
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="BackgroundColor" Value="#1a6f36" />
+            <Setter Property="HorizontalOptions" Value="Fill" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="HeightRequest" Value="40" />
+        </Style>
+        <Style x:Key="Spacing" TargetType="Label">
+            <Setter Property="Margin" Value="10,10,10,10" />
+        </Style>
+    </ContentPage.Resources>
+
+
+    <ScrollView>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <BoxView BackgroundColor="#f9f6f6" />
+            <!-- Image à gauche -->
+            <Image Source="logodrsmoke_new.png.webp" Margin="10,10,10,10" HorizontalOptions="Start" WidthRequest="50" HeightRequest="50" />
+
+            <!-- SearchBar au centre -->
+            <ImageButton  Source="user.png" HorizontalOptions="End" WidthRequest="25" HeightRequest="25" Margin="10,10,10,10" Clicked="Testing" BackgroundColor="#f9f6f6"  />
+
+            <VerticalStackLayout Grid.Row="1">
+                <Label Text="Produit magasin" TextColor="#868383" HorizontalOptions="Center" VerticalOptions="Center" Margin="10,10,10,10" FontSize="22"/>
+            </VerticalStackLayout>
+
+
+
+            <Frame BorderColor="#1a6f36" 
+                   Grid.Row="3"
+                   CornerRadius="5"
+                   WidthRequest="300"
+                   Padding="0">
+                <StackLayout>
+                    <Label  Text="Fleur de CBD"
+                            Style="{StaticResource Title}" />
+                    <BoxView Style="{StaticResource Separateur}"  />
+                    <Image Source="https://drsmoke.fr/wp-content/uploads/2023/11/Alpina-Fleur-CBD-Production-Dr-Smoke--500x625.png"/>
+                    <BoxView Style="{StaticResource Separateur}"  />
+                    <Label Text="ALPINA" Style="{StaticResource Spacing}" />
+                    <Label Text="PRODUCTION DR SMOKE GREENHOUSE" Style="{StaticResource Spacing}" />
+                    <Label Text="4,00 €/1g" Style="{StaticResource Spacing}" />
+                    <Button Text="Voir le produit" Clicked="GoToProduitDetail" />
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="#1a6f36" 
+                   Grid.Row="4"
+                   CornerRadius="5"
+                   WidthRequest="300"
+                   Padding="0">
+                <StackLayout>
+                    <Label  Text="Fleur de CBD"
+                            Style="{StaticResource Title}" />
+                    <BoxView Style="{StaticResource Separateur}"  />
+                    <Image Source="https://drsmoke.fr/wp-content/uploads/2023/01/Blueberry--500x625.png"/>
+                    <BoxView Style="{StaticResource Separateur}"  />
+                    <Label Text="BLUEBERRY INDOOR" Style="{StaticResource Spacing}" />
+                    <Label Text="DR SMOKE BLUEBERRY INDOOR" Style="{StaticResource Spacing}" />
+                    <Label Text="7,00 €/1g" Style="{StaticResource Spacing}" />
+                    <Button Text="Voir le produit" Clicked="GoToProduitDetail" />
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="#1a6f36" 
+                   Grid.Row="5"
+                   CornerRadius="5"
+                   WidthRequest="300"
+                   Padding="0">
+                <StackLayout>
+                    <Label  
+                        Text="Fleur de CBD"
+                        Style="{StaticResource Title}" />
+                    <BoxView Style="{StaticResource Separateur}"  />
+                    <Image Source="https://drsmoke.fr/wp-content/uploads/2023/11/Alpina-Fleur-CBD-Production-Dr-Smoke--500x625.png"/>
+                    <BoxView Style="{StaticResource Separateur}"  />
+                    <Label Text="GREEN CRACK" Style="{StaticResource Spacing}" />
+                    <Label Text="PRODUCTION DR SMOKE GREENHOUSE" Style="{StaticResource Spacing}" />
+                    <Label Text="4,00 €/1g" Style="{StaticResource Spacing}" />
+                    <Button Text="Voir le produit" Clicked="GoToProduitDetail" />
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="#1a6f36" 
+                   Grid.Row="6"
+                   CornerRadius="5"
+                   WidthRequest="300"
+                   Padding="0">
+                <StackLayout>
+                    <Label  
+                        Text="Fleur de CBD"
+                        Style="{StaticResource Title}" />
+                    <BoxView Style="{StaticResource Separateur}"  />
+                    <Image Source="https://drsmoke.fr/wp-content/uploads/2023/11/King-Stars-Fleur-CBD-Production-Dr-Smoke-Fond-transparent--500x625.png"/>
+                    <BoxView Style="{StaticResource Separateur}"  />
+                    <Label Text="KING STAR" Style="{StaticResource Spacing}" />
+                    <Label Text="PRODUCTION DR SMOKE GREENHOUSE" Style="{StaticResource Spacing}" />
+                    <Label Text="4,00 €/1g" Style="{StaticResource Spacing}" />
+                    <Button Text="Voir le produit" Clicked="GoToProduitDetail" />
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="#1a6f36" 
+                   Grid.Row="7"
+                   CornerRadius="5"
+                   WidthRequest="300"
+                   Padding="0">
+                <StackLayout>
+                    <Label  
+                        Style="{StaticResource Title}"
+                        Text="Fleur de CBD" />
+                    <BoxView Style="{StaticResource Separateur}"  />
+                    <Image Source="https://drsmoke.fr/wp-content/uploads/2022/11/Dr-smoke-Fleur-de-CBD-Greenhouse-Kiss-Cannabis-photo-solo--500x625.png.webp"/>
+                    <BoxView Style="{StaticResource Separateur}"  />
+                    <Label Text="KISS GREENHOUSE" Style="{StaticResource Spacing}" />
+                    <Label Text="DR SMOKE GREENHOUSE" Style="{StaticResource Spacing}" />
+                    <Label Text="6,00 €/1g" Style="{StaticResource Spacing}" />
+                    <Button Text="Voir le produit" Clicked="GoToProduitDetail" />
+                </StackLayout>
+            </Frame>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

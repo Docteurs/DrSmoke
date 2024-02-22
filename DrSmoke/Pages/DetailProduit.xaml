@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DrSmoke.Pages.DetailProduit"
+             Title="DetailProduit">
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#1a6f36" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+        <Style TargetType="BoxView" x:Key="Separateur">
+            <Setter Property="Color" Value="#1a6f36"/>
+            <Setter Property="HeightRequest" Value="2" />
+            <Setter Property="Margin" Value="5,5,5,5" />
+            <Setter Property="HorizontalOptions" Value="Fill"/>
+        </Style>
+        <Style TargetType="Label" >
+            <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="NunitoRegular" />
+        </Style>
+        <Style TargetType="Label" x:Key="Bold">
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+            <Style x:Key="Title" TargetType="Label">
+                <Setter Property="FontSize" Value="22" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Margin" Value="20,20,20,20" />
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+    </ContentPage.Resources>
+    
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <BoxView BackgroundColor="#f9f6f6" />
+            <!-- Image à gauche -->
+            <Image Source="logodrsmoke_new.png.webp" Margin="10,10,10,10" HorizontalOptions="Start" WidthRequest="50" HeightRequest="50" />
+
+            <!-- SearchBar au centre -->
+            <ImageButton  Source="user.png" HorizontalOptions="End" WidthRequest="25" HeightRequest="25" Margin="10,10,10,10" Clicked="Testing" BackgroundColor="#f9f6f6"  />
+
+            <VerticalStackLayout Grid.Row="1">
+                <Label Text="Découvrez la Deep Candy CBD" TextColor="#868383" HorizontalOptions="Center" VerticalOptions="Center" FontSize="22"/>
+            </VerticalStackLayout>
+
+
+            <Image Grid.Row="1" Source="https://drsmoke.fr/wp-content/uploads/2023/11/Deep-Candy-Fleur-CBD-Production-Dr-Smoke-Fond-transparent.png"
+               WidthRequest="200" HeightRequest="200" x:Name="ImagePrincipale" />
+
+            <Label Grid.Row="2" Text="Deep Candy CBD Production Dr SMOKE Greenhouse" HorizontalOptions="Center" Style="{StaticResource Title}" />
+
+            <Frame Grid.Row="3">
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <ImageButton Source="https://drsmoke.fr/wp-content/uploads/2023/11/Deep-Candy-Fleur-CBD-Production-Dr-Smoke-Fond-transparent-100x100.png"
+                             HeightRequest="50" WidthRequest="50" HorizontalOptions="FillAndExpand" Clicked="ClickImage0" />
+                    <ImageButton Source="https://drsmoke.fr/wp-content/uploads/2023/11/Deep-Candy-Zoom-Fleur-CBD-Production-Dr-Smoke--100x100.png"
+                             HeightRequest="50" WidthRequest="50" HorizontalOptions="FillAndExpand" Clicked="ClickImage1" />
+                    <ImageButton Source="https://drsmoke.fr/wp-content/uploads/2023/11/Fleurs-CBD-Production-Dr-Smoke--100x100.png"
+                             HeightRequest="50" WidthRequest="50" HorizontalOptions="FillAndExpand" Clicked="ClickImage2" />
+                </HorizontalStackLayout>
+            </Frame>
+            <Label Grid.Row="4" Text="Deep Candy CBD Production Dr SMOKE Greenhouse" HorizontalOptions="Center" Style="{StaticResource Title}" />
+            <BoxView Grid.Row="5" Style="{StaticResource Separateur}"  />
+            <Label Grid.Row="6" Text="Odeur : fruitées." />
+            <Label Grid.Row="7" Text="Goût : douces et boisées." />
+            <Label Grid.Row="8" Text="Effet : Relaxant, Énergétique, Équilibré." />
+            <HorizontalStackLayout Grid.Row="9">
+                <Label Text="4,00€" />
+                <Label Text="Le gramme" Style="{StaticResource Bold}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Grid.Row="10">
+                <Label Text="Choisir une options" />
+                <Picker x:Name="picker"
+                        Title="Grammage">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>1g</x:String>
+                            <x:String>3g</x:String>
+                            <x:String>5g</x:String>
+                            <x:String>10g</x:String>
+                            <x:String>25g</x:String>
+                            <x:String>50g</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </HorizontalStackLayout>
+
+            <Label Grid.Row="11" x:Name="PrixOption" Text="0 €"/>
+
+            <HorizontalStackLayout Grid.Row="12">
+                <Stepper Maximum="20"
+                        Increment="1"
+                        HorizontalOptions="Center"
+                        ValueChanged="OnStepperValueChanged"  />
+                <Label x:Name="_displayLabel"
+                       Text="0"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+                <Button Text="Ajouter au panier" />
+            </HorizontalStackLayout>
+
+            
+            <BoxView Grid.Row="13" Style="{StaticResource Separateur}"  />
+            <Label Grid.Row="14" Text="DESCRIPTION" Style="{StaticResource Bold}" HorizontalOptions="Center" />
+            <BoxView Grid.Row="15" Style="{StaticResource Separateur}"  />
+            
+
+            <Frame Grid.Row="16" WidthRequest="350" BorderColor="White">
+                <VerticalStackLayout>
+                    <Label Text="Description" Style="{StaticResource Title}" />
+                    <Label Text="Deep Candy CBD" Style="{StaticResource Title}" />
+                    <Label Text="Deep Candy CBD Dr Smoke vous présente avec fierté notre hybride, la Deep Candy Greenhouse, un équilibre parfait entre 50% de Sativa et 50% d’Indica. Cultivée avec le plus grand soin dans nos installations en France, cette variété émane de notre production exclusive." />
+                    <Label Text="Pour satisfaire nos clients et franchises, nous avons développé cinq variétés distinctes issues du même champ, garantissant ainsi des Greenhouses d’une qualité inégalée tout au long de l’année." />
+                    <Label Text="Reconnue pour son goût sucré et son effet relaxant, Deep Candy incarne une variété hybride de cannabis dont le profil sucré et fruité rappelle les délices des bonbons et sucreries, à l’origine de son nom." />
+                    <Label Text="Passons maintenant à l’aspect de la Deep Candy CBD. Ses têtes, souvent chatoyantes de nuances vertes et violettes, révèlent une forte concentration en anthocyanes. Ces bourgeons denses et résineux arborent fièrement leurs trichomes."/>
+                    <Label Text="Concernant ses effets, la Deep Candy CBD harmonise avec brio ses caractéristiques Indica et Sativa, procurant une relaxation corporelle légère et une clarté mentale apaisante, comblant ainsi ceux qui recherchent une expérience cannabis équilibrée et harmonieuse." />
+                    <Label Text="En ce qui concerne son parfum, la Deep Candy CBD offre un mélange savoureux sucré et fruité, captivant les sens avec des notes subtiles de baies, raisins, agrumes et vanille, attirant les amateurs de cannabis en quête d’une expérience gustative exquise." />
+                    <Label Text="Penchons-nous maintenant sur l’héritage et la culture de la Deep Candy CBD. Issue d’un croisement méticuleux entre plusieurs variétés sélectionnées pour leurs profils aromatiques uniques et leurs effets équilibrés, cette variété est cultivée en intérieur, suivant rigoureusement des normes biologiques, garantissant ainsi la pureté et la qualité du produit final."/>
+                    <Label Text="En ce qui concerne les taux, le taux de THC est inférieur à 0,3% tandis que le taux de CBD est établi à 5,5%. Ces valeurs permettent une expérience contrôlée et maîtrisée" />
+                </VerticalStackLayout>
+            </Frame>
+            
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DrSmoke.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DrSmoke"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.BackgroundColor="#1a6f36"
+    Shell.TitleColor="White"
+    Title="DrSmoke">
+
+    
+    <TabBar>
+        <Tab Title="Home">
+            <ShellContent Title="Home" ContentTemplate="{DataTemplate local:MainPage}" Route="Home" />
+        </Tab>
+        <Tab Title="Produits" Icon="Icon/icon.png">
+            <ShellContent Title="Produit Magasin" ContentTemplate="{DataTemplate local:Pages.ProduitMagasin}" Route="ProduitMagasin" />
+        </Tab>
+        <Tab Title="Magasins" Icon="Icon/magasin.png">
+            <ShellContent Title="Nos Magasins" ContentTemplate="{DataTemplate local:Pages.Magasin}" Route="MagasinPage" />
+        </Tab>
+        <Tab Title="Panier" Icon="Icon/panier.png">
+            <ShellContent Title="Panier" ContentTemplate="{DataTemplate local:Pages.Panier}" Route="PanierPage" />
+        </Tab>
+        <ShellContent Title="Panier" ContentTemplate="{DataTemplate local:Pages.MagasinEtProduit}" Route="MagasinEtProduit" />
+    </TabBar>
+
+</Shell>
+    
